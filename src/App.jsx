@@ -107,6 +107,7 @@ const reducer = (state, { type, payload }) => {
 			};
 
 		case ACTIONS.DELETE_DIGIT:
+			if (state.currentOperand == null) return state;
 			if (state.overwriteEvaluate) {
 				return {
 					currentOperand: null,
@@ -168,16 +169,13 @@ function formatOperand(operand) {
 }
 
 function App() {
-	const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
-		reducer,
-		defaultState
-	);
+	const [state, dispatch] = useReducer(reducer, defaultState);
 
 	return (
 		<div className='calculator' id='blue'>
 			<Header />
 			<div className='output'>
-				<div className='current-operand'>{formatOperand(currentOperand)}</div>
+				<div className='current-operand'>{formatOperand(state.currentOperand)}</div>
 			</div>
 			<div className='button-grid'>
 				<DigitButton dispatch={dispatch} digit='7' />
