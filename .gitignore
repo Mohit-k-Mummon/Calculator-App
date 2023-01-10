@@ -24,3 +24,5 @@ yarn-error.log*
 
 
 *.fig
+*.code-workspace
+*.md
