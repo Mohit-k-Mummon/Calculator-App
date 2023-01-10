@@ -16,8 +16,11 @@ html {
 body {
     min-height: 100vh;
     background-color: var(--Main-background);
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s;
 }
 
@@ -62,8 +65,6 @@ body {
     --Tertiary-hover-clr: #f96b5b;
 }
 
-
-
 /* Theme Toggle */
 :root:has(#white:checked) {
     --Main-background: hsl(0, 0%, 90%);
@@ -94,6 +95,7 @@ body {
 
 }
 
+
 :root:has(#purple:checked) {
     --Main-background: hsl(268, 75%, 9%);
 
@@ -121,6 +123,104 @@ body {
     --Secondary-hover-clr: #8631af;
     --Tertiary-hover-clr: #93fff8;
 }
+
+
+
+/* FALLBACKS FOR NO :HAS() SUPPORT */
+.blue {
+    /* Main Background Color */
+    --Main-background: hsl(222, 26%, 31%);
+
+    /* Header Colors */
+    --Header-clr: hsl(0, 0%, 100%);
+
+    /* Toggle Colors */
+    --Toggle-background: hsl(223, 31%, 20%);
+    --Toggle-color: hsl(6, 63%, 50%);
+
+    /* Output background */
+    --Output-background: hsl(224, 36%, 15%);
+
+    /* Keys */
+        /* Primary Keys */
+        --Primary-keys: hsl(30, 25%, 89%);
+        --Primary-keys-shadow: hsl(28, 16%, 65%);
+
+        /* Secondary Keys */
+        --Secondary-keys: hsl(225, 21%, 49%);
+        --Secondary-keys-shadow: hsl(224, 28%, 35%);
+
+        /* Tertiary Keys */
+        --Tertiary-keys: hsl(6, 63%, 50%);
+        --Tertiary-keys-shadow: hsl(6, 70%, 34%);
+
+    /* Button Fonts Colors */
+    --Btn-font-primary-clr: hsl(221, 14%, 31%);
+    --Btn-font-secondary-clr: hsl(0, 0%, 100%);
+    --Btn-font-evaluate-clr: hsl(0, 0%, 100%);
+
+    /* Button Hover Colors */
+    --Primary-hover-clr: #fffffe;
+    --Secondary-hover-clr: #A2B2E1;
+    --Tertiary-hover-clr: #f96b5b;
+}
+
+.white {
+--Main-background: hsl(0, 0%, 90%);
+
+--Header-clr: hsl(60, 9%, 19%);
+
+--Toggle-background: hsl(0, 5%, 81%);
+--Toggle-color: hsl(25, 98%, 40%);
+
+--Output-background: hsl(0, 0%, 93%);
+
+--Primary-keys: hsl(45, 7%, 89%);
+--Primary-keys-shadow: hsl(35, 11%, 61%);
+
+--Secondary-keys: hsl(185, 42%, 37%);
+--Secondary-keys-shadow: hsl(185, 58%, 25%);
+
+--Tertiary-keys: hsl(25, 98%, 40%);
+--Tertiary-keys-shadow: hsl(25, 99%, 27%);
+
+--Btn-font-primary-clr: hsl(60, 10%, 19%);
+--Btn-font-secondary-clr: hsl(0, 0%, 100%);
+--Btn-font-evaluate-clr: hsl(0, 0%, 100%);
+
+--Primary-hover-clr: hsl(0, 0%, 100%);
+--Secondary-hover-clr: #62b5bc;
+--Tertiary-hover-clr: #ff8a38;
+}
+
+.purple {
+--Main-background: hsl(268, 75%, 9%);
+
+--Header-clr: hsl(52, 100%, 62%);
+
+--Toggle-background: hsl(268, 71%, 12%);
+--Toggle-color: hsl(176, 100%, 44%);
+
+--Output-background: hsl(268, 71%, 12%);
+
+--Primary-keys: hsl(268, 47%, 21%);
+--Primary-keys-shadow: hsl(290, 70%, 36%);
+
+--Secondary-keys: hsl(281, 89%, 26%);
+--Secondary-keys-shadow: hsl(285, 91%, 52%);
+
+--Tertiary-keys: hsl(176, 100%, 44%);
+--Tertiary-keys-shadow: hsl(177, 92%, 70%);
+
+--Btn-font-primary-clr: hsl(52, 100%, 62%);
+--Btn-font-secondary-clr: hsl(0, 0%, 100%);
+--Btn-font-evaluate-clr: hsl(198, 20%, 13%);
+
+--Primary-hover-clr: #6c34ac;
+--Secondary-hover-clr: #8631af;
+--Tertiary-hover-clr: #93fff8;
+}
+
 
 
 
