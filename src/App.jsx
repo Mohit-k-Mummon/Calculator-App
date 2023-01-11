@@ -191,7 +191,7 @@ function App() {
 		<div className='calculator'>
 			<Header />
 			<div className='output'>
-				<p className='current-operand'>{formatOperand(state.currentOperand)}</p>
+				<h1 className='current-operand'>{formatOperand(state.currentOperand)}</h1>
 			</div>
 			<div className='button-grid'>
 				<DigitButton dispatch={dispatch} digit='7' />
