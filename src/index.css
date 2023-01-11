@@ -399,6 +399,7 @@ body {
     padding: 2.4rem;
     word-wrap: break-word;
     word-break: break-all;
+    white-space: pre-line;
 }
 
 .output .current-operand {
@@ -407,8 +408,6 @@ body {
     font-weight: 700;
     position: relative;
     top: 0.2rem;
-    word-wrap: break-word;
-    word-break: break-all;
 }
 
 
