@@ -405,7 +405,6 @@ body {
     font-size: 3.2rem;
     font-weight: 700;
     border: 4px solid var(--Primary-keys-shadow);
-    transition: all 0.1s;
 }
 
 .button-primary:hover,
@@ -419,7 +418,6 @@ body {
     font-size: 2rem;
     font-weight: 600;
     border: 4px solid var(--Secondary-keys-shadow);
-    transition: all 0.1s;
 }
 
 .button-secondary:hover,
@@ -433,7 +431,6 @@ body {
     color: var(--Btn-font-evaluate-clr);
     font-weight: 600;
     border: 4px solid var(--Tertiary-keys-shadow);
-    transition: all 0.1s;
 }
 
 .button-tertiary:hover,
