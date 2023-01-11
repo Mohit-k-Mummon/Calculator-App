@@ -31,7 +31,7 @@ const reducer = (state, { type, payload }) => {
 				return {
 					...state,
 					currentOperand: payload.digit,
-					overwriteEvaluate: false,
+					overwriteEvaluation: false,
 				};
 			}
 			// Overwrite the currentOperand when evaluating 3 or more digits
@@ -42,8 +42,18 @@ const reducer = (state, { type, payload }) => {
 					overwriteMultiOperation: false,
 				};
 			}
+
+			// If first digit is '.'
+			if (state.currentOperand === null && payload.digit === '.') {
+				return {
+					...state,
+					currentOperand: `0${payload.digit}`,
+				};
+			}
+
 			// Zero must be followed by a period
 			if (state.currentOperand === '0' && payload.digit !== '.') return state;
+
 			// No more than one decimal
 			if (payload.digit === '.' && state.currentOperand.includes('.')) return state;
 
@@ -60,11 +70,12 @@ const reducer = (state, { type, payload }) => {
 			};
 
 		case ACTIONS.CHOOSE_OPERATION:
-			// Both Operands are null
+			// If both operands are null return state
 			if (state.currentOperand == null && state.previousOperand == null) {
 				return state;
 			}
 
+			// If you change mind about which operation to perform before new operand is set. i.e from * -> +
 			if (state.currentOperand == null) {
 				return {
 					...state,
@@ -101,22 +112,26 @@ const reducer = (state, { type, payload }) => {
 			return {
 				...state,
 				previousOperand: null,
-				overwriteEvaluate: true,
+				overwriteEvaluation: true,
 				operation: null,
 				currentOperand: evaluate(state),
 			};
 
 		case ACTIONS.DELETE_DIGIT:
+			// If current operand is empty return state
 			if (state.currentOperand == null) return state;
-			if (state.overwriteEvaluate) {
+
+			// Check if last action was evaluate, then reset
+			if (state.overwriteEvaluation) {
 				return {
 					currentOperand: null,
 					previousOperand: null,
 					operation: null,
-					overwriteEvaluate: false,
+					overwriteEvaluation: false,
 				};
 			}
 
+			// Check if last action was a multi-operand, then reset
 			if (state.overwriteMultiOperation) {
 				return {
 					currentOperand: null,
@@ -126,6 +141,7 @@ const reducer = (state, { type, payload }) => {
 				};
 			}
 
+			// Return current operand minus the last character
 			return {
 				...state,
 				currentOperand: state.currentOperand.slice(0, -1),
