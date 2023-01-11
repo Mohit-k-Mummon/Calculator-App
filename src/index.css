@@ -284,6 +284,7 @@ body {
     font-weight: 700;
     position: relative;
     left: 1px;
+    height: 1.1rem;
 }
 
 
@@ -299,6 +300,32 @@ body {
     background-color: var(--Toggle-background);
     border-radius: 30px;
     margin-inline: auto;
+    position: relative;
+}
+
+.theme-switcher label {
+    color: var(--Header-clr);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.theme-switcher label:nth-of-type(1) {
+    position: absolute;
+    top: -16px;
+    left: 12px;
+}
+
+.theme-switcher label:nth-of-type(2) {
+    position: absolute;
+    top: -16px;
+    left: 33px;
+}
+
+.theme-switcher label:nth-of-type(3) {
+    position: absolute;
+    top: -16px;
+    right: 9px;
 }
 
 .theme-switcher input[type='radio'] {

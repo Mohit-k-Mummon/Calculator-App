@@ -172,10 +172,10 @@ function App() {
 	const [state, dispatch] = useReducer(reducer, defaultState);
 
 	return (
-		<div className='calculator' id='blue'>
+		<div className='calculator'>
 			<Header />
 			<div className='output'>
-				<div className='current-operand'>{formatOperand(state.currentOperand)}</div>
+				<p className='current-operand'>{formatOperand(state.currentOperand)}</p>
 			</div>
 			<div className='button-grid'>
 				<DigitButton dispatch={dispatch} digit='7' />

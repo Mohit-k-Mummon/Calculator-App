@@ -64,15 +64,15 @@ const Header = () => {
 				<h2>Theme</h2>
 				<div className='toggler-wrapper'>
 					<div className='numbers'>
-						<div>1</div>
+						{/* <div>1</div>
 						<div>2</div>
-						<div>3</div>
+						<div>3</div> */}
 					</div>
 					<form action='' className='theme-switcher'>
 						<fieldset>
 							<legend className='visually-hidden'>Pick a theme</legend>
-							<label className='visually-hidden' htmlFor='blue'>
-								Blue Theme
+							<label className='-hidden' htmlFor='blue'>
+								1
 							</label>
 							<input
 								onChange={onBlueCheckedHandler}
@@ -81,8 +81,8 @@ const Header = () => {
 								id='blue'
 								checked={blueIsChecked}
 							/>
-							<label className='visually-hidden' htmlFor='white'>
-								White Theme
+							<label className='-hidden' htmlFor='white'>
+								2
 							</label>
 							<input
 								onChange={onWhiteCheckedHandler}
@@ -91,8 +91,8 @@ const Header = () => {
 								id='white'
 								checked={whiteIsChecked}
 							/>
-							<label className='visually-hidden' htmlFor='purple'>
-								Purple Theme
+							<label className='-hidden' htmlFor='purple'>
+								3
 							</label>
 							<input
 								onChange={onPurpleCheckedHandler}
