@@ -230,6 +230,7 @@ body {
 ********************/
 .calculator {
     max-width: 32.7rem;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -388,7 +389,7 @@ body {
 
 /* Output */
 .output {
-    height: fit-content;
+    height: min-content;
     min-height: 8.8rem;
     background-color: var(--Output-background);
     border-radius: 10px;
@@ -408,6 +409,7 @@ body {
     font-weight: 700;
     position: relative;
     top: 0.2rem;
+    max-width: 14ch;
 }
 
 
@@ -483,6 +485,7 @@ body {
 
     .output .current-operand {
         font-size: 5.6rem;
+        max-width: 18ch;
     }
 
     .button-primary {
