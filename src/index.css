@@ -399,7 +399,7 @@ body {
     background-color: var(--Output-background);
     border-radius: 10px;
     margin-top: 3.6rem;
-    padding: 2.4rem 0 2.4rem 2.4rem;
+    padding: 2rem;
     word-wrap: break-word;
     word-break: break-all;
     white-space: pre-wrap;
@@ -410,10 +410,9 @@ body {
     color: var(--Header-clr);
     font-size: 4rem;
     font-weight: 700;
-    padding-right: 2.4rem;
     text-align: end;
     position: relative;
-    top: 1.4rem;
+    top: 0.5rem;
 }
 
 
@@ -490,6 +489,7 @@ body {
     .output .current-operand {
         font-size: 5.6rem;
         max-width: 18ch;
+        top: 1.4rem;
     }
 
     .button-primary {
