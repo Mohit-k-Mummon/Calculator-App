@@ -405,7 +405,8 @@ body {
     padding: 2.4rem;
     word-wrap: break-word;
     word-break: break-all;
-    white-space: pre-line;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .output .current-operand {
