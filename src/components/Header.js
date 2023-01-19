@@ -3,17 +3,17 @@ import { useState, useEffect } from 'react';
 
 const Header = () => {
 	// TOGGLE STATES START
-	const [blueIsChecked, setBlueIsChecked] = useState(true);
-	const [whiteIsChecked, setWhiteIsChecked] = useState(undefined);
-	const [purpleIsChecked, setPurpleIsChecked] = useState(undefined);
+	const [blueIsChecked, setBlueIsChecked] = useState(false);
+	const [whiteIsChecked, setWhiteIsChecked] = useState(false);
+	const [purpleIsChecked, setPurpleIsChecked] = useState(false);
 
 	const onBlueCheckedHandler = () => {
 		// Fallback code for no :has() support
 		document.documentElement.className = 'blue';
 
 		setBlueIsChecked(true);
-		setWhiteIsChecked(undefined);
-		setPurpleIsChecked(undefined);
+		setWhiteIsChecked(false);
+		setPurpleIsChecked(false);
 
 		localStorage.setItem('themePreference', 'blue');
 	};
@@ -22,9 +22,9 @@ const Header = () => {
 		// Fallback code for no :has() support
 		document.documentElement.className = 'white';
 
-		setBlueIsChecked(undefined);
 		setWhiteIsChecked(true);
-		setPurpleIsChecked(undefined);
+		setBlueIsChecked(false);
+		setPurpleIsChecked(false);
 
 		// Storing theme in localStorage
 		localStorage.setItem('themePreference', 'white');
@@ -34,9 +34,9 @@ const Header = () => {
 		// Fallback code for no :has() support
 		document.documentElement.className = 'purple';
 
-		setBlueIsChecked(undefined);
-		setWhiteIsChecked(undefined);
 		setPurpleIsChecked(true);
+		setBlueIsChecked(false);
+		setWhiteIsChecked(false);
 
 		localStorage.setItem('themePreference', 'purple');
 	};
@@ -55,7 +55,7 @@ const Header = () => {
 		if (storedThemePreference === 'purple') {
 			onPurpleCheckedHandler();
 		}
-	});
+	}, []);
 
 	return (
 		<header className='header'>
