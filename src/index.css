@@ -418,6 +418,11 @@ body {
 
 /* Buttons */
 .button-grid > button {
+    /* following 3 properties fixed the button vertical alignment */
+    height: 6.4rem;
+    line-height: 6.4rem;
+    white-space: nowrap;
+    /* end */
     cursor: pointer;
     outline: none;
     border-top: none;
@@ -429,9 +434,6 @@ body {
 
 .button-primary {
     background-color: var(--Primary-keys);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--Btn-font-primary-clr);
     font-size: 3.2rem;
     font-weight: 700;
@@ -478,8 +480,9 @@ body {
 
     .button-grid {
         grid-template-columns: repeat(4, 10.1rem);
-        gap: 2.5rem 2.4rem;
+        gap: 2.4rem 2.4rem;
         padding: 3.2rem 3rem;
+        margin-top: 2.4rem;
     }
 
     .output {
