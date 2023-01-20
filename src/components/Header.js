@@ -22,8 +22,8 @@ const Header = () => {
 		// Fallback code for no :has() support
 		document.documentElement.className = 'white';
 
-		setWhiteIsChecked(true);
 		setBlueIsChecked(false);
+		setWhiteIsChecked(true);
 		setPurpleIsChecked(false);
 
 		// Storing theme in localStorage
@@ -34,9 +34,9 @@ const Header = () => {
 		// Fallback code for no :has() support
 		document.documentElement.className = 'purple';
 
-		setPurpleIsChecked(true);
 		setBlueIsChecked(false);
 		setWhiteIsChecked(false);
+		setPurpleIsChecked(true);
 
 		localStorage.setItem('themePreference', 'purple');
 	};
@@ -46,14 +46,18 @@ const Header = () => {
 	useEffect(() => {
 		const storedThemePreference = localStorage.getItem('themePreference');
 
-		if (storedThemePreference === 'blue') {
+		if (storedThemePreference) {
+			if (storedThemePreference === 'blue') {
+				onBlueCheckedHandler();
+			}
+			if (storedThemePreference === 'white') {
+				onWhiteCheckedHandler();
+			}
+			if (storedThemePreference === 'purple') {
+				onPurpleCheckedHandler();
+			}
+		} else {
 			onBlueCheckedHandler();
-		}
-		if (storedThemePreference === 'white') {
-			onWhiteCheckedHandler();
-		}
-		if (storedThemePreference === 'purple') {
-			onPurpleCheckedHandler();
 		}
 	}, []);
 
